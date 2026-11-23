@@ -203,7 +203,25 @@ h2 {
 .order-row .button { width: 100%; }
 
 @media (min-width: 700px) {
-  .masthead { padding-block: 16px; }
+  .masthead {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    padding-block: 16px;
+  }
+
+  .site-nav {
+    display: grid;
+    grid-column: 2 / -1;
+    grid-template-columns: subgrid;
+    gap: inherit;
+  }
+
+  .site-nav a { font-size: .9375rem; }
+
+  .header-order {
+    justify-self: end;
+    padding-inline-end: 0;
+  }
 
   .hero-copy {
     width: 50%;
@@ -236,6 +254,8 @@ h2 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     column-gap: clamp(16px, 2vw, 30px);
   }
+
+  .order-row { text-align: center; }
 
   .order-row .button { width: auto; }
 }
