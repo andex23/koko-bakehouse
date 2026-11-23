@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en-NG">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f9f4e7">
+  <meta name="description" content="Browse Koko Bakehouse’s weekend menu and order bread, meat pies and small chops for home delivery on WhatsApp.">
+  <title>Koko Bakehouse · Weekend delivery</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="order.js" defer></script>
+</head>
+<body>
+  <header class="masthead">
+    <span class="wordmark" aria-label="Koko Bakehouse">koko<span>BAKEHOUSE</span></span>
+    <a class="menu-link" href="#menu">Weekend menu <span aria-hidden="true">↓</span></a>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="headline">
+      <div class="hero-copy">
+        <p class="eyebrow">Your neighbourhood bakery</p>
+        <h1 id="headline">Weekend delivery <em>now open</em></h1>
+        <p class="intro">Fresh bread, flaky meat pies and small chops, delivered to your door on Saturdays and Sundays.</p>
+      </div>
+      <picture>
+        <source media="(max-width: 600px)" srcset="assets/bread-small.webp">
+        <img src="assets/bread.webp" width="920" height="612" alt="An assortment of golden, flour-dusted loaves" fetchpriority="high">
+      </picture>
+    </section>
+    <section id="menu" aria-labelledby="menu-title">
+      <header class="menu-header">
+        <h2 id="menu-title">The weekend menu</h2>
+        <p id="hint" hidden>Choose your favourites</p>
+      </header>
+      <ul class="menu-grid">
+        <li><label><input type="checkbox" value="Milk bread" hidden><span><strong>Milk bread</strong><small>Soft, buttery pull-apart loaf</small></span><b>₦2,500</b></label></li>
+        <li><label><input type="checkbox" value="Beef meat pie" hidden><span><strong>Beef meat pie</strong><small>Flaky pastry with a savoury beef filling</small></span><b>₦1,200</b></label></li>
+        <li><label><input type="checkbox" value="Puff-puff" hidden><span><strong>Puff-puff</strong><small>Six golden bites, lightly sweetened</small></span><b>₦1,000</b></label></li>
+        <li><label><input type="checkbox" value="Small chops box" hidden><span><strong>Small chops box</strong><small>A mix of samosas, spring rolls and puff-puff</small></span><b>₦3,500</b></label></li>
+      </ul>
+      <div class="order-row">
+        <a id="order" href="https://wa.me/2348000000000?text=Hi%20Koko%20Bakehouse%21%20I%27d%20like%20to%20place%20a%20weekend%20delivery%20order.">Order on WhatsApp <span aria-hidden="true">↗</span></a>
+        <p>Confirm quantities and delivery details in chat.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
