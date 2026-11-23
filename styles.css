@@ -14,7 +14,7 @@
   --display: Fraunces, Georgia, serif;
   color: var(--plum);
   background: var(--paper);
-  font-family: Arial, sans-serif;
+  font-family: system-ui, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -25,7 +25,7 @@ body {
   padding: 0 clamp(16px, 4vw, 64px);
 }
 
-h1, h2, p, ul { margin: 0; }
+h1, h2, h3, p, ul { margin: 0; }
 
 a { color: inherit; }
 
@@ -34,28 +34,42 @@ a { color: inherit; }
   outline-offset: 4px;
 }
 
-.masthead, .menu-header, .product-heading {
+.masthead, .site-nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
 }
 
-.masthead { padding: 16px 0; }
+.masthead {
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+}
 
-.wordmark, h1, h2, .product strong {
+.site-nav { gap: clamp(10px, 2.5vw, 28px); }
+
+.wordmark, h1, h2 {
   font-family: var(--display);
   font-weight: 900;
   letter-spacing: -.045em;
 }
 
-.wordmark { font-size: clamp(20px, 3vw, 36px); }
+.wordmark {
+  font-size: clamp(19px, 3vw, 36px);
+  line-height: 1;
+}
 
 .menu-link {
-  padding: 14px 0;
+  display: grid;
+  min-height: 44px;
+  min-width: 44px;
+  place-items: center;
   font-size: .875rem;
+  font-weight: 600;
+  text-decoration: none;
   text-underline-offset: 4px;
 }
+
+.menu-link:hover { text-decoration: underline; }
 
 .hero {
   position: relative;
@@ -67,24 +81,30 @@ a { color: inherit; }
 .hero-copy {
   position: relative;
   z-index: 1;
-  padding: 28px 24px 0;
+  padding: 26px clamp(18px, 5vw, 32px) 0;
 }
 
 h1 {
   max-width: 9ch;
-  font-size: clamp(46px, 10vw, 82px);
+  font-size: clamp(40px, 11vw, 82px);
   line-height: .98;
 }
+
+h1 span { white-space: nowrap; }
 
 .hero-copy p {
   max-width: 32ch;
   line-height: 1.45;
-  margin: 16px 0;
+  margin-top: 12px;
 }
 
 .button {
-  display: inline-block;
-  padding: 14px 22px;
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 10px 20px;
   border-radius: 30px;
   background: var(--plum);
   color: white;
@@ -95,33 +115,29 @@ h1 {
 
 .button:hover { background: #652d49; }
 
+.header-order {
+  padding-inline: clamp(11px, 2vw, 20px);
+  white-space: nowrap;
+}
+
+.header-order svg { flex: none; }
+
 .hero picture, .hero img { display: block; }
 
 .hero img {
   width: 100%;
-  height: clamp(195px, 56vw, 350px);
+  height: clamp(190px, 52vw, 330px);
   object-fit: cover;
-  object-position: center 66%;
+  object-position: center 24%;
   mask-image: linear-gradient(transparent, black 12%);
 }
 
-#menu { padding: clamp(32px, 5vw, 68px) 0 40px; }
-
-.menu-header {
-  flex-wrap: wrap;
-  align-items: baseline;
-  margin-bottom: 20px;
-}
+#menu { padding: clamp(26px, 5vw, 60px) 0 40px; }
 
 h2 {
-  font-size: clamp(30px, 4vw, 52px);
+  margin-bottom: 16px;
+  font-size: clamp(36px, 4.5vw, 56px);
   line-height: 1.05;
-}
-
-.menu-header p, .description, .order-row p {
-  font-size: .88rem;
-  color: var(--muted);
-  line-height: 1.45;
 }
 
 .menu-grid {
@@ -132,16 +148,13 @@ h2 {
   list-style: none;
 }
 
-.product {
+.menu-grid li {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  gap: 7px;
+  gap: 5px;
 }
 
-.product:has(input:not([hidden])) { cursor: pointer; }
-
-.product img {
+.menu-grid img {
   display: block;
   width: 100%;
   height: auto;
@@ -149,37 +162,35 @@ h2 {
   margin-bottom: 6px;
 }
 
-.product-heading { align-items: flex-start; }
-
-.product strong {
-  font-size: clamp(1.1rem, 2vw, 1.55rem);
-  line-height: 1.1;
+.menu-grid h3 {
+  font-size: clamp(1rem, 1.7vw, 1.3rem);
+  line-height: 1.2;
+  letter-spacing: -.025em;
 }
 
-.product input {
-  flex: none;
-  width: 18px;
-  height: 18px;
-  margin: 1px 0 0;
-  accent-color: var(--plum);
+.description {
+  font-size: .875rem;
+  color: var(--muted);
+  line-height: 1.4;
 }
 
-.product b {
+.price {
   margin-top: auto;
   padding-top: 4px;
+  font-weight: 650;
 }
 
 .order-row {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px 20px;
   margin-top: 28px;
   padding-top: 22px;
   border-top: 1px solid var(--line);
 }
 
+.order-row .button { width: 100%; }
+
 @media (min-width: 700px) {
+  .masthead { padding-block: 16px; }
+
   .hero-copy {
     width: 50%;
     padding: clamp(36px, 4vw, 64px);
@@ -205,4 +216,6 @@ h2 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     column-gap: clamp(16px, 2vw, 30px);
   }
+
+  .order-row .button { width: auto; }
 }

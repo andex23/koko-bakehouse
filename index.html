@@ -4,22 +4,32 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#fffaf1">
-  <meta name="description" content="Browse Koko Bakehouse’s weekend menu and order bread, meat pies and small chops for home delivery on WhatsApp.">
+  <meta name="description" content="Browse the Koko Bakehouse menu and order bread, meat pies and small chops for weekend home delivery on WhatsApp.">
   <title>Koko Bakehouse · Weekend delivery</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="order.js" defer></script>
 </head>
 <body>
   <header class="masthead">
     <span class="wordmark">Koko Bakehouse</span>
-    <a class="menu-link" href="#menu">Weekend menu</a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a class="menu-link" href="#menu">Menu</a>
+      <a class="button header-order"
+         href="https://wa.me/2348000000000?text=Hi%20Koko%20Bakehouse%21%20I%27d%20like%20to%20place%20a%20weekend%20delivery%20order."
+         aria-label="Order now on WhatsApp">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+             stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M7.4 20.3 3 21.5l1.2-4.4a9 9 0 1 1 3.2 3.2Z"/>
+          <path d="M8.1 7.5c-.7.5-1 1.3-.7 2.3 1 3.2 3.6 5.8 6.8 6.8 1 .3 1.8 0 2.3-.7l.5-1-2.7-1.5-.9 1c-1.7-.7-3.1-2.1-3.8-3.8l1-.9-1.5-2.7-1 .5Z"/>
+        </svg>
+        Order now
+      </a>
+    </nav>
   </header>
   <main>
     <section class="hero" aria-labelledby="headline">
       <div class="hero-copy">
-        <h1 id="headline">Weekend delivery now open</h1>
+        <h1 id="headline">Weekend delivery <span>now open</span></h1>
         <p>Milk bread, meat pies and small chops, delivered on Saturdays and Sundays.</p>
-        <a class="button" href="#menu">Pick your bakes</a>
       </div>
       <picture>
         <source media="(max-width: 699px)" srcset="assets/weekend-phone.webp">
@@ -28,59 +38,38 @@
       </picture>
     </section>
     <section id="menu" aria-labelledby="menu-title">
-      <header class="menu-header">
-        <h2 id="menu-title">The weekend menu</h2>
-        <p id="hint" hidden>Select items for your order</p>
-      </header>
+      <h2 id="menu-title">Menu</h2>
       <ul class="menu-grid">
         <li>
-          <label class="product">
-            <img src="assets/milk-bread.webp" alt="A sliced, golden pull-apart loaf" width="520" height="520" loading="lazy">
-            <span class="product-heading">
-              <strong>Milk bread</strong>
-              <input type="checkbox" value="Milk bread" aria-label="Include Milk bread in order" hidden>
-            </span>
-            <span class="description">One buttery pull-apart loaf</span>
-            <b>₦2,500</b>
-          </label>
+          <img src="assets/milk-bread.webp" alt="A sliced, golden pull-apart loaf" width="520" height="520" loading="lazy">
+          <h3>Milk bread</h3>
+          <p class="description">One buttery pull-apart loaf</p>
+          <p class="price">₦2,500</p>
         </li>
         <li>
-          <label class="product">
-            <img src="assets/beef-pie.webp" alt="Crimped pastry opened to show the beef filling" width="520" height="520" loading="lazy">
-            <span class="product-heading">
-              <strong>Beef meat pie</strong>
-              <input type="checkbox" value="Beef meat pie" aria-label="Include Beef meat pie in order" hidden>
-            </span>
-            <span class="description">One flaky pie with beef and potato</span>
-            <b>₦1,200</b>
-          </label>
+          <img src="assets/beef-pie.webp" alt="Crimped pastry opened to show the beef filling" width="520" height="520" loading="lazy">
+          <h3>Beef meat pie</h3>
+          <p class="description">One flaky pie with beef and potato</p>
+          <p class="price">₦1,200</p>
         </li>
         <li>
-          <label class="product">
-            <img src="assets/puff-puff.webp" alt="Golden puff-puff piled in a shallow bowl" width="520" height="520" loading="lazy">
-            <span class="product-heading">
-              <strong>Puff-puff</strong>
-              <input type="checkbox" value="Puff-puff" aria-label="Include Puff-puff in order" hidden>
-            </span>
-            <span class="description">Six lightly sweetened dough balls</span>
-            <b>₦1,000</b>
-          </label>
+          <img src="assets/puff-puff.webp" alt="Golden puff-puff piled in a shallow bowl" width="520" height="520" loading="lazy">
+          <h3>Puff-puff</h3>
+          <p class="description">Six lightly sweetened dough balls</p>
+          <p class="price">₦1,000</p>
         </li>
         <li>
-          <label class="product">
-            <img src="assets/small-chops.webp" alt="Open box of samosas, spring rolls and puff-puff" width="520" height="520" loading="lazy">
-            <span class="product-heading">
-              <strong>Small chops box</strong>
-              <input type="checkbox" value="Small chops box" aria-label="Include Small chops box in order" hidden>
-            </span>
-            <span class="description">Samosas, spring rolls and puff-puff</span>
-            <b>₦3,500</b>
-          </label>
+          <img src="assets/small-chops.webp" alt="Open box of samosas, spring rolls and puff-puff" width="520" height="520" loading="lazy">
+          <h3>Small chops box</h3>
+          <p class="description">Samosas, spring rolls and puff-puff</p>
+          <p class="price">₦3,500</p>
         </li>
       </ul>
       <div class="order-row">
-        <a id="order" class="button" href="https://wa.me/2348000000000?text=Hi%20Koko%20Bakehouse%21%20I%27d%20like%20to%20place%20a%20weekend%20delivery%20order.">Order on WhatsApp</a>
-        <p>Confirm quantities and delivery details in chat.</p>
+        <a class="button"
+           href="https://wa.me/2348000000000?text=Hi%20Koko%20Bakehouse%21%20I%27d%20like%20to%20place%20a%20weekend%20delivery%20order.">
+          Order on WhatsApp
+        </a>
       </div>
     </section>
   </main>
